@@ -27,8 +27,10 @@ var Button = React.createClass({
 var AnswerFrame = React.createClass({
   render: function() {
     return (
-      <div>
-      ...
+      <div id="answer-frame">
+        <div className="well">
+        ...
+        </div>
       </div>
     );
   }
