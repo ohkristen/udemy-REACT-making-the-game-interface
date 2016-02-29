@@ -18,7 +18,7 @@ var Button = React.createClass({
   render: function() {
     return (
       <div id="button-frame">
-        <button className="btn btn-primary">=</button>
+        <button className="btn btn-primary btn-lg">=</button>
       </div>
     );
   }
@@ -41,9 +41,12 @@ var Game = React.createClass({
     return (
       <div id="game">
         <h2>Play Nine</h2>
-        < Stars />
-        < Button />
-        < AnswerFrame />
+        <hr/>
+        <div className="clearfix">
+            < Stars />
+            < Button />
+            < AnswerFrame />
+        </div>
       </div>
     );
   }
