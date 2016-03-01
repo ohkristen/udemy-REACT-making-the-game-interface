@@ -44,7 +44,7 @@ var AnswerFrame = React.createClass({
 var NumbersFrame = React.createClass({
   render: function() {
     return(
-      <div className="numbers-frame">
+      <div id="numbers-frame">
         <div className="well">
           <div className="number">4</div>
           <div className="number">5</div>
