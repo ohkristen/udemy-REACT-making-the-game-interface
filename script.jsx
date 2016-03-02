@@ -34,7 +34,7 @@ var AnswerFrame = React.createClass({
     return (
       <div id="answer-frame">
         <div className="well">
-        ...
+         {this.props.selectedNumbers}
         </div>
       </div>
     );
@@ -62,6 +62,10 @@ var NumbersFrame = React.createClass({
 })
 
 var Game = React.createClass({
+  getInitialState: function() {
+    return {selectedNumbers: [3, 6]
+    }
+  },
   render: function() {
     return (
       <div id="game">
@@ -70,7 +74,7 @@ var Game = React.createClass({
         <div className="clearfix">
             < Stars />
             < Button />
-            < AnswerFrame />
+            < AnswerFrame selectedNumbers={this.state.selectedNumbers} />
         </div>
             < NumbersFrame />
       </div>
