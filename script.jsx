@@ -104,6 +104,17 @@ var Game = React.createClass({
     this.setState({ selectedNumbers: selectedNumbers })
   },
 
+  sumOfSelectedNumbers: function() {
+    return this.state.selectedNumbers.reduce(function (p,n){
+      return p+n,
+    }, 0)
+  },
+
+  checkAnswer: function() {
+    var correct = this.state.numberOfStars === this.sumOfSelectedNumbers());
+    this.setState({correct: correct});
+  },
+
   render: function() {
     var selectedNumbers = this.state.selectedNumbers;
     var numberOfStars = this.state.numberOfStars;
