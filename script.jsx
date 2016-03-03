@@ -4,7 +4,7 @@ var StarsFrame = React.createClass({
     var numberOfStars = Math.floor(Math.random)() *9) +1;
     var stars = [];
 
-    for (var i=0; i<numberOfStars; i++){
+    for (var i=0; i< this.props.numberOfStars; i++){
       stars.push(
         <span className="glyphicon glyphicon-star"></span>
       )
@@ -69,7 +69,8 @@ var NumbersFrame = React.createClass({
 
 var Game = React.createClass({
   getInitialState: function() {
-    return {selectedNumbers: [3, 6]
+    return {numberOfStars: Math.floor(Math.random()*9 +1),
+            selectedNumbers: []
     }
   },
   clickNumber: function(clickedNumber) {
@@ -85,7 +86,7 @@ var Game = React.createClass({
         <h2>Play Nine</h2>
         <hr/>
         <div className="clearfix">
-            < Stars />
+            < Stars numberOfStars={this.state.numberOfStars} />
             < Button />
             < AnswerFrame selectedNumbers={this.state.selectedNumbers} />
         </div>
