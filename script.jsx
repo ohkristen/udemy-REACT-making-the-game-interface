@@ -83,7 +83,8 @@ var NumbersFrame = React.createClass({
 var Game = React.createClass({
   getInitialState: function() {
     return {numberOfStars: Math.floor(Math.random()*9 +1),
-            selectedNumbers: []
+            selectedNumbers: [],
+            correct: null
     }
   },
 
