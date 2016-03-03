@@ -21,9 +21,12 @@ var StarsFrame = React.createClass({
 
 var Button = React.createClass({
   render: function() {
+    var disabled;
+    disabled = (this.props.selectedNumbers.length ===0);
+
     return (
       <div id="button-frame">
-        <button className="btn btn-primary btn-lg">=</button>
+        <button className="btn btn-primary btn-lg" disabled={disabled} >=</button>
       </div>
     );
   }
@@ -111,7 +114,7 @@ var Game = React.createClass({
         <hr/>
         <div className="clearfix">
             < Stars numberOfStars={numberOfStars} />
-            < Button />
+            < Button selectedNumbers={selectedNumbers}/>
             < AnswerFrame selectedNumbers={selectedNumbers}
                           unselectedNumber={this.unselectedNumber} />
         </div>
