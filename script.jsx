@@ -119,6 +119,7 @@ var Game = React.createClass({
   render: function() {
     var selectedNumbers = this.state.selectedNumbers;
     var numberOfStars = this.state.numberOfStars;
+    var correct = this.state.correct;
 
     return (
       <div id="game">
@@ -126,7 +127,8 @@ var Game = React.createClass({
         <hr/>
         <div className="clearfix">
             < Stars numberOfStars={numberOfStars} />
-            < Button selectedNumbers={selectedNumbers}/>
+            < Button selectedNumbers={selectedNumbers}
+                     correct={correct} />
             < AnswerFrame selectedNumbers={selectedNumbers}
                           unselectedNumber={this.unselectedNumber} />
         </div>
