@@ -21,12 +21,42 @@ var StarsFrame = React.createClass({
 
 var Button = React.createClass({
   render: function() {
-    var disabled;
-    disabled = (this.props.selectedNumbers.length ===0);
+    var disabled, button, correct=this.props.correct;
+
+    switch(correct) {
+      case true:
+        button = (
+          <button className="btn btn-success btn-lrg">
+            <span className="glyphicon glyphicon-ok">
+            </span>
+          </button>
+        );
+        break;
+
+      case false:
+        button = (
+          <button className="btn btn-danger btn-lrg">
+            <span className="glyphicon glyphicon-remove">
+            </span>
+          </button>
+        );
+        break;
+
+      default:
+        disabled = (this.props.selectedNumbers.length ===0);
+        button = (
+          <button className="btn btn-primary btn-lrg"
+                  disabled={disabled}
+                  onClick={this.props.checkAnswer}>
+              =
+              </button>
+        );
+    }
+
 
     return (
       <div id="button-frame">
-        <button className="btn btn-primary btn-lg" disabled={disabled} >=</button>
+        {button}
       </div>
     );
   }
@@ -128,7 +158,8 @@ var Game = React.createClass({
         <div className="clearfix">
             < Stars numberOfStars={numberOfStars} />
             < Button selectedNumbers={selectedNumbers}
-                     correct={correct} />
+                     correct={correct}
+                     checkAnswer={this.checkAnswer} />
             < AnswerFrame selectedNumbers={selectedNumbers}
                           unselectedNumber={this.unselectedNumber} />
         </div>
