@@ -26,7 +26,8 @@ var Button = React.createClass({
     switch(correct) {
       case true:
         button = (
-          <button className="btn btn-success btn-lrg">
+          <button className="btn btn-success btn-lrg"
+              onClick={this.props.acceptAnswer} >
             <span className="glyphicon glyphicon-ok">
             </span>
           </button>
@@ -173,7 +174,8 @@ var Game = React.createClass({
             < Stars numberOfStars={numberOfStars} />
             < Button selectedNumbers={selectedNumbers}
                      correct={correct}
-                     checkAnswer={this.checkAnswer} />
+                     checkAnswer={this.checkAnswer}
+                     acceptAnswer={this.acceptAnswer} />
             < AnswerFrame selectedNumbers={selectedNumbers}
                           unselectedNumber={this.unselectedNumber} />
         </div>
