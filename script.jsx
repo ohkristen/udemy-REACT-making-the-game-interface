@@ -121,7 +121,8 @@ var Game = React.createClass({
   selectNumber: function(clickedNumber) {
     if(this.state.selectedNumbers.indexOf(clickedNumber) < 0){
     this.setState(
-    {selectedNumbers: this.state.selectedNumbers.concat(clickedNumber)}
+    {selectedNumbers: this.state.selectedNumbers.concat(clickedNumber),
+      correct: null}
     );
     }
   },
@@ -132,7 +133,7 @@ var Game = React.createClass({
 
     selectedNumbers.splice(indexOfNumber, 1);
 
-    this.setState({ selectedNumbers: selectedNumbers })
+    this.setState({ selectedNumbers: selectedNumbers, correct: null })
   },
 
   sumOfSelectedNumbers: function() {
