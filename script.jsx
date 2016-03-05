@@ -114,6 +114,7 @@ var Game = React.createClass({
   getInitialState: function() {
     return {numberOfStars: Math.floor(Math.random()*9 +1),
             selectedNumbers: [],
+            usedNumbers: [],
             correct: null
     }
   },
@@ -147,9 +148,15 @@ var Game = React.createClass({
     this.setState({correct: correct});
   },
 
+  acceptAnswer: function() {
+    //used numbers
+
+  },
+
   render: function() {
     var selectedNumbers = this.state.selectedNumbers;
     var numberOfStars = this.state.numberOfStars;
+    var usedNumbers = this.state.usedNumbers;
     var correct = this.state.correct;
 
     return (
@@ -165,7 +172,8 @@ var Game = React.createClass({
                           unselectedNumber={this.unselectedNumber} />
         </div>
             < NumbersFrame selectedNumbers={selectedNumbers}
-                            selectNumber={this.selectNumber} />
+                           selectNumber={this.selectNumber}
+                           usedNumbers={this.usedNumbers} />
       </div>
     );
   }
