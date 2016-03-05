@@ -165,6 +165,14 @@ var Game = React.createClass({
     })
   },
 
+  redraw: function() {
+    this.setState ({
+      numberOfStars: Math.floor(Math.random()*9) +1,
+      correct: null,
+      selectedNumbers: []
+    })
+  },
+
   render: function() {
     var selectedNumbers = this.state.selectedNumbers;
     var numberOfStars = this.state.numberOfStars;
@@ -180,7 +188,8 @@ var Game = React.createClass({
             < Button selectedNumbers={selectedNumbers}
                      correct={correct}
                      checkAnswer={this.checkAnswer}
-                     acceptAnswer={this.acceptAnswer} />
+                     acceptAnswer={this.acceptAnswer}
+                     redraw={this.redraw} />
             < AnswerFrame selectedNumbers={selectedNumbers}
                           unselectedNumber={this.unselectedNumber} />
         </div>
