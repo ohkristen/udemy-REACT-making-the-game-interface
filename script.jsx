@@ -58,6 +58,11 @@ var Button = React.createClass({
     return (
       <div id="button-frame">
         {button}
+        <br /><br />
+        <button className="btn btn-warning btn-xs" onClick={this.props.redraw} >
+          <span className="glyphicon glyphicon-refresh">
+          </span>
+        </button>
       </div>
     );
   }
