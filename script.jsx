@@ -149,8 +149,14 @@ var Game = React.createClass({
   },
 
   acceptAnswer: function() {
-    //used numbers
+    var usedNumbers = this.state.usedNumbers.concat(this.state.selectedNumbers);
 
+    this.setState ({
+      selectedNumbers: [],
+      usedNumbers: usedNumbers,
+      correct: null,
+      numberOfStars: Math.floor(Math.random()*9) +1
+    })
   },
 
   render: function() {

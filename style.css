@@ -41,3 +41,10 @@
   ; cursor: not-allowed
   ;
 }
+
+#numbers-frame .used-true {
+  backfround-color: #aaddaa
+  ; color: #99dd99
+  ; cursor: not-allowed
+  ;
+}
