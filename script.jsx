@@ -194,6 +194,17 @@ var Game = React.createClass({
     }
   },
 
+  updateDoneStatus: function() {
+    if (this.state.usedNumbers.length ===9 ) {
+      this.setState({ doneStatus: "Done.  Nice!"});
+      return;
+    }
+
+    if (this.state.redraws === 0 && !this.possibleSolutions()){
+      this.setState({ doneStatus: "Game Over."})
+    }
+  },
+
   render: function() {
     var selectedNumbers = this.state.selectedNumbers;
     var numberOfStars = this.state.numberOfStars;
